@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.dao.RoleDao">
+	
+	<resultMap id="Role" type="com.ly.entity.Role">
+		<result column="ROLE_ID" property="id"/>
+		<result column="ROLE_NAME" property="name"/>
+		<result column="ROLE_SEX" property="sex"/>
+	</resultMap>
+
+
+	<select id="getRole" parameterType="int" resultMap="Role">
+		select ROLE_ID, ROLE_NAME, ROLE_SEX from ROLE where ROLE_ID=#{id}
+	</select>
+	
+	
+	<select id="getAllRoleList" resultMap="Role">
+		select ROLE_ID, ROLE_NAME, ROLE_SEX from ROLE
+	</select>
+</mapper>

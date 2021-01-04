@@ -1,0 +1,9 @@
+.face {
+	width: 200px;
+	height: 100px;
+	border: 1px solid #ff8000;
+}
+
+.face:hover {
+	border: 2px solid #ff0000;
+}

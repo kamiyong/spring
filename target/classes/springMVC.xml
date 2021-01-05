@@ -16,6 +16,7 @@
         http://www.springframework.org/schema/tx 
         http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
+
 	<!-- ********************************* -->
 	<!-- 开启controller注解支持 -->
 	<!-- ********************************* -->
@@ -27,6 +28,17 @@
 		<context:include-filter type="annotation"
 			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
 	</context:component-scan>
+
+
+	<!-- ********************************* -->
+	<!-- AOP 注解方式 ；定义Aspect -->
+	<!-- ********************************* -->
+	<!-- 激活组件扫描功能,在包"com.ly.aop及其子包下面自动扫描通过注解配置的组件 -->
+	<context:component-scan
+		base-package="com.ly.aop"></context:component-scan>
+	<!-- 启动AspectJ支持 只对扫描过的bean有效 -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
 
 	<!-- ********************************* -->
 	<!--避免IE执行AJAX时，返回JSON出现下载文件 -->
